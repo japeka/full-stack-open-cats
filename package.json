@@ -1,0 +1,67 @@
+{
+  "name": "full-stack-open-cats",
+  "version": "0.1.0",
+  "engines": {
+    "node": "16.x"
+  },
+  "private": true,
+  "dependencies": {
+    "@testing-library/user-event": "^13.5.0",
+    "@types/history": "^5.0.0",
+    "axios": "^1.2.2",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.31.0",
+    "eslint-plugin-jest": "^27.1.7",
+    "eslint-react": "^0.0.4",
+    "express": "^4.18.2",
+    "history": "^5.3.0",
+    "jest": "^27.5.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.6.1",
+    "react-scripts": "5.0.1",
+    "testing-library": "^0.0.2",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "start-prod": "node app.js",
+    "build": "react-scripts build",
+    "eslint": "eslint ./src/*.js",
+    "test": "jest",
+    "test:e2e": "cypress run",
+    "cypress": "cypress open",
+    "eject": "react-scripts eject"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "moduleNameMapper": {
+      "axios": "axios/dist/node/axios.cjs",
+      "\\.(css|scss)$": "identity-obj-proxy"
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "cypress": "^12.2.0",
+    "tailwindcss": "^3.2.4"
+  }
+}
