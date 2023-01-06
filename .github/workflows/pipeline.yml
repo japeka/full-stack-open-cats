@@ -30,6 +30,5 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           command: npm run test:e2e
-          build: npm run build
           start: npm run start
           wait-on: http://localhost:5000
