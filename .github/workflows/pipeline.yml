@@ -26,8 +26,10 @@ jobs:
       - name: test
         run: npm run test
 
-      - name: print
-        run: echo "janne"
+      - name: Create .env file
+        run: |
+          touch .env
+          echo REACT_APP_CAT_API_KEY=${{ secrets.REACT_APP_CAT_API_KEY }} >> .env        
 
       - name: e2e tests
         uses: cypress-io/github-action@v4
