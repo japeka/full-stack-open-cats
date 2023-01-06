@@ -1,7 +1,6 @@
 
 /* eslint-disable no-undef */
 describe('Cats', function() {
-  cy.log('created new user 1')
   it('front page can be opened', function() {
     cy.log('created new user 2')
     cy.visit('http://localhost:5000')
