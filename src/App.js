@@ -13,7 +13,9 @@ import {
 
 function App() {
   // eslint-disable-next-line no-undef
-  const { data: cats, isLoading, error  } = Request(`https://api.thecatapi.com/v1/breeds?api_key=${process.env.REACT_APP_CAT_API_KEY}`)
+  
+  //const { data: cats, isLoading, error  } = Request(`https://api.thecatapi.com/v1/breeds?api_key=${process.env.REACT_APP_CAT_API_KEY}`)
+  const { data: cats, isLoading, error  } = Request(`https://api.thecatapi.com/v1/breeds?api_key=live_zyyIY5m9aNOHhFdyr34iu59zoTASQkcrYSgy0iGYLOQbov2P63UrT69ikTsYNuqT`)
   if (isLoading) {
     return <div>Loading...</div>
   }
