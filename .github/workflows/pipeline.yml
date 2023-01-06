@@ -28,6 +28,8 @@ jobs:
 
       - name: e2e tests
         uses: cypress-io/github-action@v4
+        env:
+          REACT_APP_CAT_API_KEY: ${{ secrets.REACT_APP_CAT_API_KEY }}
         with:
           command: npm run test:e2e
           start: npm run start
