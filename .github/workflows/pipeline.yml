@@ -17,6 +17,11 @@ jobs:
       - name: npm install
         run: npm install
 
+      - name: create env file
+        run: |
+          touch .env
+          echo REACT_APP_CAT_API_KEY=${{ secrets.REACT_APP_CAT_API_KEY }} >> .env
+
       - name: lint
         run: npm run eslint
 
@@ -32,5 +37,3 @@ jobs:
           command: npm run test:e2e
           start: npm run start
           wait-on: http://localhost:5000
-        env:
-          REACT_APP_CAT_API_KEY: ${{ secrets.REACT_APP_CAT_API_KEY }}  
