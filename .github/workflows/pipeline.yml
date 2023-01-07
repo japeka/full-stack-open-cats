@@ -53,6 +53,22 @@ jobs:
           checkstring: "ok"
           rollbackonhealthcheckfailed: true
 
+      - name: Deployed successfully
+        uses: rjstone/discord-webhook-notify@v1.0.4
+        if: success() && github.event_name == 'push' && !contains(join(github.event.commits.*.message), '#skip')
+        with:
+          severity: info
+          details: New version of cats deployed!
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+
+      - name: Build failed
+        uses: rjstone/discord-webhook-notify@v1.0.4
+        if: failure()
+        with: 
+          severity: error
+          details: Build failed! 
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}   
+
 
   tag_release:
     needs: [simple_deployment_pipeline]
